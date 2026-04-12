@@ -71,10 +71,10 @@ ccusage's Live Blocks from feature to removal全过程 is a live lesson: real-ti
 
 ## Impact
 
-Statusline赛道 in March 2026高速增长 (claude-hud 5 days涨 4,804 stars, mainly GitHub Trending effect), but赛道已趋于拥挤. Real competitive advantage不来自功能数量, 而来自:
+Statusline track in March 2026 saw rapid growth (claude-hud gained 4,804 stars in 5 days, mainly GitHub Trending effect), but the track has become crowded. Real competitive advantage doesn't come from feature count, but from:
 
-1. **Data reliability**: ccusage's live blocks removed due to inaccuracies, shows "accurate"比"rich"更重要
-2. **Zero dependencies**: Node.js工具的 process management bug说明 runtime dependency是结构性风险, 不只是安装不便
-3. **Differentiated features**: Unique core concepts (like pace tracking:按当前速度够不够用)比"me too"功能更有竞争力
+1. **Data reliability**: ccusage's live blocks removed due to inaccuracies, shows "accurate" is more important than "rich"
+2. **Zero dependencies**: Node.js tools' process management bugs show runtime dependency is structural risk, not just installation inconvenience
+3. **Differentiated features**: Unique core concepts (like pace tracking: is current speed enough) are more competitive than "me too" features
 
-**不值得追的功能**: Sub-agent monitoring (数据源不在 stdin, 实际用户需求证据不足), Multi-device data sync (工程复杂度高, 需求证据弱).
+**Features not worth pursuing**: Sub-agent monitoring (data source not in stdin, actual user demand evidence insufficient), Multi-device data sync (high engineering complexity, weak demand evidence).

@@ -1,148 +1,148 @@
-# Claude Code Statusline 市场扫描
+# Claude Code Statusline Market Scan
 
-> Source: claude-pace 项目研究
-> Collected: 2026-03-19（市场数据截至 2026-03-19，GitHub stars 均通过 gh api 实测核实）
+> Source: claude-pace project research
+> Collected: 2026-03-19 (market data as of 2026-03-19, GitHub stars verified via gh api)
 
-## 竞品全景
+## Competitive Landscape
 
-| 项目 | Stars | 语言 | 形态 | 最后更新 | 特色 |
-|------|------:|------|------|----------|------|
-| [ccusage](https://github.com/ryoppippi/ccusage) | 11,693 | TypeScript | CLI + statusline | 03-18 | 用量分析 + burn rate |
-| [claude-hud](https://github.com/jarrodwatts/claude-hud) | 7,038 | JavaScript | statusline | 03-15 | 功能最全，先行者 |
-| [Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor) | 7,009 | Python | 独立 dashboard | 2025-09 | ML 预测，已停更 |
-| [ccstatusline](https://github.com/sirmalloc/ccstatusline) | 5,421 | TypeScript | statusline | 03-16 | 高度可定制 + 主题 |
-| [CCometixLine](https://github.com/Haleclipse/CCometixLine) | 2,227 | Rust | statusline | 03-14 | 高性能二进制 |
-| [claude-powerline](https://github.com/Owloops/claude-powerline) | 931 | TypeScript | statusline | 03-18 | vim powerline 风格 |
-| [kamranahmedse/claude-statusline](https://github.com/kamranahmedse/claude-statusline) | 726 | Shell | statusline | 03-10 | 极简 |
-| [claude-code-statusline](https://github.com/rz1989s/claude-code-statusline) | 397 | Shell | statusline | 03-14 | 4 行增强 + 主题 |
-| [claude-code-usage-bar](https://github.com/leeguooooo/claude-code-usage-bar) | 159 | Python | statusline | 2025-11 | burn rate + 耗尽预测 |
-| [claudia-statusline](https://github.com/hagan/claudia-statusline) | 21 | Rust | statusline | 2026-01 | SQLite 持久化 + 云同步 |
-| [felipeelias/claude-statusline](https://github.com/felipeelias/claude-statusline) | 2 | Go | statusline | 03-17 | 单二进制，极简 |
-| claude-pace | 3 | Bash+jq | statusline | 03-19 | pace tracking，零运行时依赖 |
+| Project | Stars | Language | Form | Last Update | Features |
+|---------|------:|----------|------|-------------|----------|
+| [ccusage](https://github.com/ryoppippi/ccusage) | 11,693 | TypeScript | CLI + statusline | 03-18 | Usage analysis + burn rate |
+| [claude-hud](https://github.com/jarrodwatts/claude-hud) | 7,038 | JavaScript | statusline | 03-15 | Most features, pioneer |
+| [Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor) | 7,009 | Python | Standalone dashboard | 2025-09 | ML prediction, unmaintained |
+| [ccstatusline](https://github.com/sirmalloc/ccstatusline) | 5,421 | TypeScript | statusline | 03-16 | Highly customizable + themes |
+| [CCometixLine](https://github.com/Haleclipse/CCometixLine) | 2,227 | Rust | statusline | 03-14 | High-performance binary |
+| [claude-powerline](https://github.com/Owloops/claude-powerline) | 931 | TypeScript | statusline | 03-18 | vim powerline style |
+| [kamranahmedse/claude-statusline](https://github.com/kamranahmedse/claude-statusline) | 726 | Shell | statusline | 03-10 | Minimalist |
+| [claude-code-statusline](https://github.com/rz1989s/claude-code-statusline) | 397 | Shell | statusline | 03-14 | 4-line enhanced + themes |
+| [claude-code-usage-bar](https://github.com/leeguooooo/claude-code-usage-bar) | 159 | Python | statusline | 2025-11 | burn rate + depletion prediction |
+| [claudia-statusline](https://github.com/hagan/claudia-statusline) | 21 | Rust | statusline | 2026-01 | SQLite persistence + cloud sync |
+| [felipeelias/claude-statusline](https://github.com/felipeelias/claude-statusline) | 2 | Go | statusline | 03-17 | Single binary, minimalist |
+| claude-pace | 3 | Bash+jq | statusline | 03-19 | pace tracking, zero runtime deps |
 
-另有 6+ 个 npm 包：ccstatusline、@owloops/claude-powerline、@illumin8ca/claude-statusline、@chongdashu/cc-statusline、@sponzig/cc-statusline、@this-dot/claude-code-context-status-line。
+Plus 6+ npm packages: ccstatusline, @owloops/claude-powerline, @illumin8ca/claude-statusline, @chongdashu/cc-statusline, @sponzig/cc-statusline, @this-dot/claude-code-context-status-line.
 
-## 竞品详细分析
+## Detailed Competitor Analysis
 
-### ccusage (11,693 stars) - 综合最强
+### ccusage (11,693 stars) - Overall Strongest
 
-- 定位：CLI 用量分析工具，statusline 是子功能
-- statusline 显示：model、session cost、today cost、5h block 剩余时间、burn rate、context 使用率
-- 技术：TypeScript，默认 offline 模式（缓存定价数据），无网络延迟
-- 优势：用户量最大，功能覆盖面广，活跃维护
-- 与 claude-pace 差异：ccusage 的 burn rate 是趋势展示，不做预测性告警；需要 Node.js 运行时
+- Positioning: CLI usage analysis tool, statusline is a sub-feature
+- Statusline display: model, session cost, today cost, 5h block remaining time, burn rate, context usage
+- Tech: TypeScript, default offline mode (cached pricing data), no network latency
+- Advantages: Largest user base, broad feature coverage, active maintenance
+- Diff from claude-pace: ccusage's burn rate shows trends, no predictive alerts; requires Node.js runtime
 
-### claude-hud (7,038 stars) - 先行者
+### claude-hud (7,038 stars) - Pioneer
 
-- 功能最全：context 进度条、rate limit 用量、工具活动、子代理状态、Todo 进度、Git 集成
-- Usage API 缓存 TTL 60s（成功）/ 15s（失败）
-- 已知问题：冷启动因冷缓存/API 超时不显示 usage (#214)、0 字节锁文件永久阻塞 (#220)、Windows 兼容性 (#196)
-- 不在 awesome-claude-code 列表中（该列表 29K stars，收录了 5 个 statusline 工具但不含 claude-hud）
+- Most features: context progress bar, rate limit usage, tool activity, subagent status, Todo progress, Git integration
+- Usage API cache TTL 60s (success) / 15s (failure)
+- Known issues: Cold start fails due to cold cache/API timeout (#214), 0-byte lock file permanent block (#220), Windows compatibility (#196)
+- Not in awesome-claude-code list (29K stars, lists 5 statusline tools but excludes claude-hud)
 
-### Claude-Code-Usage-Monitor (7,009 stars) - 已停更
+### Claude-Code-Usage-Monitor (7,009 stars) - Unmaintained
 
-- 独立终端 dashboard（非 statusline 嵌入），Python 实现
-- 最强预测功能：P90 机器学习 + burn rate，用过去 192 小时历史数据
-- HN 获 245 点 / 135 条评论，但代码质量遭批评（"vibe-coding style"，主文件 1000+ 行）
-- 最后更新 2025-09-14，已停止活跃维护
+- Standalone terminal dashboard (not embedded statusline), Python implementation
+- Strongest prediction: P90 ML + burn rate, using past 192 hours of history
+- HN: 245 points / 135 comments, but code quality criticized ("vibe-coding style", main file 1000+ lines)
+- Last update 2025-09-14, no active maintenance
 
-### ccstatusline (5,421 stars) - 可定制
+### ccstatusline (5,421 stars) - Customizable
 
-- 定位是"格式化器"，不做 API 调用
-- powerline 风格、可交互 TUI 配置、多主题
-- npm 分发，性能由 Node.js 启动开销决定
+- Positioned as "formatter", no API calls
+- Powerline style, interactive TUI config, multiple themes
+- npm distribution, performance determined by Node.js startup overhead
 
-### CCometixLine (2,227 stars) - Rust 性能派
+### CCometixLine (2,227 stars) - Rust Performance
 
-- Git 集成、model 显示、usage 追踪、交互式 TUI 配置
-- 唯一在 awesome-claude-code 中的 Rust 方案
-- 文档未提供具体 ms 性能数字
+- Git integration, model display, usage tracking, interactive TUI config
+- Only Rust solution in awesome-claude-code
+- Documentation lacks specific ms performance numbers
 
-## 社区分发渠道
+## Community Distribution Channels
 
-| 渠道 | Stars | claude-pace 收录状态 |
-|------|------:|---------------------|
-| [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | 29,014 | 未收录 |
-| Anthropic 官方插件目录 | 12,653 | statusline 类零收录 |
+| Channel | Stars | claude-pace Status |
+|---------|------:|--------------------|
+| [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | 29,014 | Not listed |
+| Anthropic official plugin directory | 12,653 | Zero statusline listings |
 
-awesome-claude-code 当前收录 5 个 statusline：CCometixLine、ccstatusline、claude-code-statusline、claude-powerline、claudia-statusline。
+awesome-claude-code currently lists 5 statuslines: CCometixLine, ccstatusline, claude-code-statusline, claude-powerline, claudia-statusline.
 
-## 用户痛点与未满足需求
+## User Pain Points & Unmet Needs
 
-### 核心痛点：配额不透明
+### Core Pain Point: Quota Opacity
 
-1. **突然触限无预警** - $200/月 Max 用户在 10-15 分钟内触限，只看到"usage limit reached"（The Register, 2026-01-05）
-2. **配额重置时间不可见** - 2026-03-18 同一天 3 个独立 issue 请求此功能（#35747, #35672, #35827）
-3. **5h + 7d 双重窗口认知负担** - 用户分不清在哪个限制下触限
+1. **Sudden limit hit with no warning** - $200/month Max users hit limit in 10-15 minutes, only see "usage limit reached" (The Register, 2026-01-05)
+2. **Quota reset time invisible** - 3 independent issues on same day 2026-03-18 requesting this (#35747, #35672, #35827)
+3. **5h + 7d dual window cognitive load** - Users confused about which limit they hit
 
-### 官方态度
+### Official Stance
 
-- **明确拒绝原生 token 指示器**：issue #10593 标记 "Not Planned"（2026-01-19），推荐 ccusage
-- **statusline stdin JSON 不暴露配额字段**：session_used_percentage、weekly_used_percentage、resets_at 均缺失
-- 第三方工具需绕道 Usage API 或解析本地 JSONL 文件
+- **Explicitly rejected native token indicator**: issue #10593 marked "Not Planned" (2026-01-19), recommends ccusage
+- **statusline stdin JSON doesn't expose quota fields**: session_used_percentage, weekly_used_percentage, resets_at all missing
+- Third-party tools must workaround via Usage API or parse local JSONL files
 
-### 其他需求
+### Other Requests
 
-- 触限后自动恢复任务执行（#18980, #26775, #35744）
-- 推送式配额预警（接近 80% 时主动告警）而非查询式（#35947）
-- 跨会话累计用量追踪（#13891, #13892）
+- Auto-resume task execution after limit hit (#18980, #26775, #35744)
+- Push-based quota warning (alert at 80%) vs query-based (#35947)
+- Cross-session cumulative usage tracking (#13891, #13892)
 
-## 技术趋势
+## Tech Trends
 
-- **从 Node.js 向轻量运行时迁移**：Rust（CCometixLine, claudia-statusline）、Go（felipeelias）、Shell（kamranahmedse, rz1989s, claude-pace）
-- **零依赖安装成为卖点**：Go 单二进制、Bash 脚本 curl 一行装完
-- **无公开性能基准**：没有任何工具发布过 hyperfine 或等价的逐 ms 基准数字
+- **Migration from Node.js to lightweight runtimes**: Rust (CCometixLine, claudia-statusline), Go (felipeelias), Shell (kamranahmedse, rz1989s, claude-pace)
+- **Zero-dep install as selling point**: Go single binary, Bash script curl one-line install
+- **No public performance benchmarks**: No tool has published hyperfine or equivalent ms-level benchmark numbers
 
-## 用户反馈分析（2026-03-24 补充）
+## User Feedback Analysis (2026-03-24补充)
 
-### 跨会话每日费用汇总 - 反馈最好的功能
+### Cross-session Daily Cost Summary - Best Feedback
 
-ccusage 的核心价值是"一行命令看金额"和"验证月费值不值"。多篇独立评测一致将"成本可视化"列为选择 ccusage 的首要原因。
+ccusage's core value is "one command to see costs" and "verify if monthly fee worth it". Multiple independent reviews consistently list "cost visualization" as primary reason for choosing ccusage.
 
-### 上下文进度条 - 用户安装 statusline 的首要动机
+### Context Progress Bar - Primary Install Motivation
 
-多个独立来源一致：context bar 是"装机理由"。SAP 社区作者写"context bar alone is worth the install"。
+Multiple independent sources agree: context bar is "install reason". SAP community author wrote "context bar alone is worth the install".
 
-### Rate Limit 5h/7d 可视化 - 第二大需求
+### Rate Limit 5h/7d Visualization - Second Biggest Need
 
-v2.1.80 后 stdin 提供官方数据，所有工具机会平等，差异化空间从"有没有"转向"准不准"。
+After v2.1.80, stdin provides official data, all tools have equal opportunity, differentiation shifts from "have or not" to "accurate or not".
 
-### 子代理状态监控 - 博客热度高，但实际用户投票证据弱
+### Subagent Status Monitoring - Blog Hot, User Voting Weak
 
-claude-hud 的子代理监控被多篇博客列为第二大价值点。但实际数据不支持"强烈需求"判断：
-- 6 条 subagent 相关 issue 全部 0 reactions
-- 均为连续编号，疑似维护者或 AI 批量创建，非用户驱动
+claude-hud's subagent monitoring listed as second value point by multiple blogs. But actual data doesn't support "strong demand" judgment:
+- 6 subagent-related issues all 0 reactions
+- All consecutive numbers, suspected maintainer or AI batch creation, not user-driven
 
-### Burn Rate / 消耗速率 - 竞品已踩坑
+### Burn Rate / Consumption Rate - Competitors Already Failed
 
-ccusage 的 Live Blocks 功能（实时 token 消耗监控）因准确性问题被正式移除（issue #782）。issue #288 (16 reactions) 和 #483 (11 reactions) 记录了"显示未达限额但实际已触限"的持续性用户抱怨。
+ccusage's Live Blocks feature (real-time token consumption monitoring) formally removed due to accuracy issues (issue #782). Issue #288 (16 reactions) and #483 (11 reactions) documented persistent user complaints about "shows not at limit but actually hit".
 
-### 零运行时依赖 - 真实差异化卖点
+### Zero Runtime Dependencies - Real Differentiator
 
-ccusage statusline 有严重的进程管理 bug（issue #459, 10 reactions, 17 comments）：`bun x ccusage statusline` 在 hooks 中导致无限进程生成、CPU 100%。
+ccusage statusline has severe process management bug (issue #459, 10 reactions, 17 comments): `bun x ccusage statusline` in hooks causes infinite process spawning, CPU 100%.
 
-多位社区作者明确将"减少依赖"列为选择工具的考量因素。Go/Rust 单二进制和纯 Bash 方案的出现动机均包含此点。
+Multiple community authors explicitly list "reduce dependencies" as tool selection factor. Go/Rust single binary and pure Bash solutions' motivation includes this.
 
-### 功能蔓延是社区明确警告的反模式
+### Feature Creep is Explicitly Warned Anti-pattern
 
 - Ovidiu (Substack): "When everything is highlighted, nothing is"
-- ccusage 的 Live Blocks 从功能到移除的全过程就是一个活教材。
+- ccusage's Live Blocks from feature to removal is a live case study.
 
-## 矛盾与不确定性
+## Contradictions & Uncertainties
 
-1. **子代理监控需求强度矛盾**：博客作者高度评价 vs GitHub issue 0 reactions。可能解释：博客作者是功能全面性的评测视角，而实际用户投票反映的是"最痛的需求"
-2. **ccusage statusline 用户粘性 vs bug 严重性矛盾**：被多个第三方依赖为数据源（说明准确性获认可），但同时有最多的准确性投诉。可能解释：CLI 报表准确而 statusline/live 组件不准确
-3. **claude-hud stars 从 7,038 (3/19) 跃升至 11,842 (3/24)**：5 天涨 4,804 stars，与 Trending 效应一致
+1. **Subagent monitoring demand strength contradiction**: Blog authors highly rate vs GitHub issues 0 reactions. Possible explanation: Blog authors evaluate from feature completeness perspective, actual user voting reflects "most painful needs"
+2. **ccusage statusline user stickiness vs bug severity contradiction**: Depended by multiple third parties (accuracy recognized), but most accuracy complaints. Possible: CLI reports accurate, statusline/live components inaccurate
+3. **claude-hud stars jumped from 7,038 (3/19) to 11,842 (3/24)**: 4,804 stars in 5 days, consistent with Trending effect
 
-## 竞品功能反馈排名
+## Competitor Feature Feedback Ranking
 
-| 排名 | 功能 | 证据强度 | 是否值得做 |
-|------|------|---------|-----------|
-| 1 | 跨会话每日费用汇总 | 高（多源独立正面反馈） | 值得评估 - 但订阅制用户可能不关心费用 |
-| 2 | 子代理/工具活动监控 | 低（博客热 issue 冷） | 暂不建议 - 等 CC stdin 暴露相关字段 |
-| 3 | 多设备数据同步 | 低 | 不建议 |
-| 4 | 按项目分组 usage | 低 | 不建议 |
+| Rank | Feature | Evidence Strength | Worth Doing |
+|------|---------|-------------------|-------------|
+| 1 | Cross-session daily cost summary | High (multi-source independent positive feedback) | Worth evaluating - but subscription users may not care about cost |
+| 2 | Subagent/tool activity monitoring | Low (blog hot issue cold) | Not recommended - wait for CC stdin to expose related fields |
+| 3 | Multi-device data sync | Low | Not recommended |
+| 4 | Per-project grouped usage | Low | Not recommended |
 
-## 结论
+## Conclusion
 
-**更有价值的方向不是"加竞品有的功能"，而是"把已有功能做到最准最可靠"。** ccusage 的 live blocks 因不准被移除、claude-hud 的 429 永久警告 bug，都说明 statusline 赛道的竞争焦点已从"功能数量"转向"数据准确性和运行可靠性"。
+**More valuable direction is not "add features competitors have", but "make existing features most accurate and reliable".** ccusage's live blocks removed due to inaccuracy, claude-hud's 429 permanent warning bug, both show statusline competition focus shifted from "feature count" to "data accuracy and runtime reliability".
