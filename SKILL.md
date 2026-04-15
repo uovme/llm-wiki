@@ -1,13 +1,13 @@
 ---
-name: karpathy-llm-wiki
-description: "Use when building or maintaining a personal LLM-powered knowledge base. Triggers: ingesting sources into a wiki, querying wiki knowledge, reflecting on topics, linting wiki quality, 'add to wiki', 'what do I know about', or any mention of 'LLM wiki' or 'Karpathy wiki'."
+name: llm-wiki
+description: "Use when building or maintaining a personal LLM-powered knowledge base. Triggers: ingesting sources into a wiki, querying wiki knowledge, reflecting on topics, linting wiki quality, 'add to wiki', 'what do I know about', or any mention of 'LLM wiki'."
 ---
 
-# Karpathy LLM Wiki
+# LLM Wiki
 
 Build and maintain a personal knowledge base using LLMs.
 
-Core ideas from Karpathy:
+Core ideas (from Karpathy):
 - "The LLM writes and maintains the wiki; the human reads and asks questions."
 - "The wiki is a persistent, compounding artifact."
 

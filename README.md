@@ -1,18 +1,18 @@
-# karpathy-llm-wiki
+# llm-wiki
 
-**A reusable skill for building Karpathy-style LLM wikis with Claude Code, Cursor, Codex, and other Agent Skills tools.**
+**A reusable skill for building LLM wikis with Claude Code, Cursor, Codex, and other Agent Skills tools.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Astro-Han/karpathy-llm-wiki?style=social)](https://github.com/Astro-Han/karpathy-llm-wiki)
-[![GitHub forks](https://img.shields.io/github/forks/Astro-Han/karpathy-llm-wiki?style=social)](https://github.com/Astro-Han/karpathy-llm-wiki)
+[![GitHub stars](https://img.shields.io/github/stars/uovme/llm-wiki?style=social)](https://github.com/uovme/llm-wiki)
+[![GitHub forks](https://img.shields.io/github/forks/uovme/llm-wiki?style=social)](https://github.com/uovme/llm-wiki)
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-compatible-blue)](https://agentskills.io)
-[![Install](https://img.shields.io/badge/Install-npx_add--skill-green)](https://github.com/Astro-Han/karpathy-llm-wiki#install)
+[![Install](https://img.shields.io/badge/Install-npx_add--skill-green)](https://github.com/uovme/llm-wiki#install)
 
 <p align="center">
   <img src="assets/karpathy-tweet.png" alt="Karpathy's tweet about LLM Wiki" width="560">
 </p>
 
-`karpathy-llm-wiki` packages [Karpathy's LLM Wiki idea](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) into one installable [Agent Skills](https://agentskills.io) skill. Your coding agent ingests sources into `RAW/`, compiles durable knowledge pages into `Wiki/`, answers questions with citations, reflects on accumulated knowledge, and lints the wiki for consistency.
+`llm-wiki` packages [Karpathy's LLM Wiki idea](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) into one installable [Agent Skills](https://agentskills.io) skill. Your coding agent ingests sources into `RAW/`, compiles durable knowledge pages into `Wiki/`, answers questions with citations, reflects on accumulated knowledge, and lints the wiki for consistency.
 
 ## What Is an LLM Wiki?
 
@@ -51,7 +51,7 @@ See [examples/](examples/) for sample wiki pages, source files, and operation lo
 ## Install
 
 ```bash
-npx add-skill Astro-Han/karpathy-llm-wiki
+npx add-skill uovme/llm-wiki
 ```
 
 Works with any tool that supports the [Agent Skills](https://agentskills.io) standard.
@@ -115,10 +115,10 @@ This skill follows the [agentskills.io](https://agentskills.io) open standard:
 
 | Tool | Install method |
 |------|----------------|
-| Claude Code | `npx add-skill Astro-Han/karpathy-llm-wiki` |
-| Cursor | `npx add-skill Astro-Han/karpathy-llm-wiki` |
-| Codex CLI | Copy to `.agents/skills/karpathy-llm-wiki/` |
-| OpenCode | `npx add-skill Astro-Han/karpathy-llm-wiki` |
+| Claude Code | `npx add-skill uovme/llm-wiki` |
+| Cursor | `npx add-skill uovme/llm-wiki` |
+| Codex CLI | Copy to `.agents/skills/llm-wiki/` |
+| OpenCode | `npx add-skill uovme/llm-wiki` |
 | Other tools | Copy `SKILL.md` and `references/` into the tool's skill directory |
 
 ## FAQ
