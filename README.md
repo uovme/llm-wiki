@@ -94,8 +94,6 @@ your-project/
 │   └── topic/
 │       └── 2026-04-03-source-article.md
 ├── Wiki/             ← Compiled knowledge pages maintained by the LLM
-│   ├── purpose.md    ← Goals, key questions, research scope
-│   ├── overview.md   ← Auto-updated global summary
 │   ├── topic/
 │   │   ├── concept-name.md          ← living page
 │   │   ├── ingest/                  ← ingest records

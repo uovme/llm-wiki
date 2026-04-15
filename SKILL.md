@@ -28,8 +28,6 @@ See `references/raw-template.md` for the exact format.
 
 ### Wiki Root
 
-- `Wiki/purpose.md`：Wiki 的灵魂。定义目标、关键问题、研究范围与演进论点。Agent 在每次 ingest 和 query 时读取，确保产出方向一致。See `references/purpose-template.md`.
-- `Wiki/overview.md`：全库自动更新的全局摘要。每次 ingest 后刷新，提供比 index.md（目录表格）更适合快速理解全局上下文的叙述性概览。See `references/overview-template.md`.
 - `Wiki/index.md`：全库目录与主题入口。
 - `Wiki/log.md`：全库按时间记录的操作日志。
 - `Wiki/Query/`：跨主题 query 归档与值得保存的问答快照。
@@ -54,12 +52,12 @@ Triggers only on the first Ingest. Check whether `RAW/` and `Wiki/` exist. Creat
 
 - `RAW/` directory (with `.gitkeep`)
 - `Wiki/` directory (with `.gitkeep`)
-- `Wiki/purpose.md` — See `references/purpose-template.md`. Ask the user to fill in goals and scope, or generate a draft based on the first source.
-- `Wiki/overview.md` — heading `# Wiki Overview`, one-line placeholder
 - `Wiki/index.md` — heading `# Knowledge Base Index`, empty body
 - `Wiki/log.md` — heading `# Wiki Log`, empty body
 - `Wiki/Query/` directory (with `.gitkeep`)
 - `Wiki/Lint/` directory (with `.gitkeep`)
+
+
 
 If Query, Reflect, or Lint cannot find the wiki structure, tell the user: "Run an ingest first to initialize the wiki." Do not auto-create.
 
@@ -88,7 +86,7 @@ If Query, Reflect, or Lint cannot find the wiki structure, tell the user: "Run a
 
 #### Compile (Wiki/)
 
-先读取 `Wiki/purpose.md` 以理解 Wiki 的方向与关注点，再更新 `Wiki/<topic>/` 下的 living pages：
+更新 `Wiki/<topic>/` 下的 living pages：
 
 - **Same core thesis as existing page** → Merge into that page. Add the new source to Sources/Raw. Update affected sections.
 - **New concept** → Create a new living page in the most relevant topic directory. Name the file after the concept, not the raw file.
@@ -101,9 +99,8 @@ See `references/article-template.md` for living page format.
 #### Post-Ingest
 
 1. 写一条 ingest 记录到 `Wiki/<topic>/ingest/`。See `references/ingest-template.md` for format.
-2. 更新 `Wiki/overview.md`：重新生成全局摘要，反映 Wiki 当前整体知识状态。See `references/overview-template.md`.
-3. 更新 `Wiki/index.md`（如目录结构或页面集合发生变化）。See `references/index-template.md` for format.
-4. 追加一条日志到 `Wiki/log.md`：
+2. 更新 `Wiki/index.md`（如目录结构或页面集合发生变化）。See `references/index-template.md` for format.
+3. 追加一条日志到 `Wiki/log.md`：
 
 ```
 ## [YYYY-MM-DD] ingest | <primary page title>
@@ -121,11 +118,10 @@ Omit `- Updated:` lines when no additional pages are updated.
 
 #### Steps
 
-1. Read `Wiki/purpose.md` to understand the Wiki's goals and scope.
-2. Read `Wiki/index.md` to locate relevant pages.
-3. Read those pages and synthesize an answer.
-4. Prefer wiki content over your own training knowledge. Cite sources with Obsidian wikilinks: `[[page name]]`.
-5. Output the answer in the conversation. Do not write files unless asked.
+1. Read `Wiki/index.md` to locate relevant pages.
+2. Read those pages and synthesize an answer.
+3. Prefer wiki content over your own training knowledge. Cite sources with Obsidian wikilinks: `[[page name]]`.
+4. Output the answer in the conversation. Do not write files unless asked.
 
 #### Archiving
 
