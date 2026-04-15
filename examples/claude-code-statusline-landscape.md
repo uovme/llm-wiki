@@ -1,7 +1,7 @@
 # Claude Code Statusline Tool Ecosystem
 
 > Source: claude-pace project research, 2026-03-19; 2026-03-24
-> Raw: [raw/ai-coding-tools/2026-03-19-claude-code-statusline-landscape.md](../../raw/ai-coding-tools/2026-03-19-claude-code-statusline-landscape.md)
+> Raw: [[RAW/ai-coding-tools/2026-03-19-claude-code-statusline-landscape.md]]
 
 ## Overview
 

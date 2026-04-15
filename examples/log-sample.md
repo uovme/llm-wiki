@@ -1,6 +1,6 @@
 # Wiki Log
 
-<!-- Format: ## [YYYY-MM-DD] Action | Topic. Cascading updates use - Updated: sub-items -->
+<!-- Format: ## [YYYY-MM-DD] action | Topic. Updates use - Updated: sub-items -->
 
 ## [2026-04-12] Update | content-strategy audience correction
 - Target audience corrected from "IT/managers" to "personal knowledge workers" (ops/admin/assistant/marketing)
@@ -20,7 +20,7 @@
 - Updated annotation: noted 2026-04-12 based on 12 guest minutes supplement
 
 ## [2026-04-12] Update | Yangzi GEO plan v1 supplemented based on complete conference minutes
-- Source: articles/geo/ compiled conclusions + raw/geo/2026-04-12 newly added 9 guests
+- Source: articles/geo/ compiled conclusions + RAW/geo/2026-04-12 newly added 9 guests
 - Output: output/2026-04-08-yangzi-geo-plan-v1.md four changes
   - Board proposal "opportunity" section: added "heavy-decision industries most suitable for priority GEO布局" + 8x growth data
   - "How to judge success" section: added attribution mechanism (UTM/consultation source/400 phone同比), start after trial success

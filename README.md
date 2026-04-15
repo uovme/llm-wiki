@@ -12,19 +12,20 @@
   <img src="assets/karpathy-tweet.png" alt="Karpathy's tweet about LLM Wiki" width="560">
 </p>
 
-`karpathy-llm-wiki` packages [Karpathy's LLM Wiki idea](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) into one installable [Agent Skills](https://agentskills.io) skill. Your coding agent ingests sources into `raw/`, compiles durable knowledge pages into `wiki/`, answers questions with citations, and lints the wiki for consistency.
+`karpathy-llm-wiki` packages [Karpathy's LLM Wiki idea](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) into one installable [Agent Skills](https://agentskills.io) skill. Your coding agent ingests sources into `RAW/`, compiles durable knowledge pages into `Wiki/`, answers questions with citations, reflects on accumulated knowledge, and lints the wiki for consistency.
 
 ## What Is an LLM Wiki?
 
 An **LLM wiki** is a knowledge system where the LLM maintains structured wiki pages instead of re-searching raw documents on every question. New sources are compiled into durable markdown pages, cross-references are updated over time, and answers cite the wiki pages that already contain the synthesized knowledge.
 
-This skill gives you three operations:
+This skill gives you four operations:
 
 | Operation | What it does | Output |
 |-----------|--------------|--------|
-| **Ingest** | Collects a source into `raw/` and compiles it into the wiki | New or updated wiki pages |
-| **Query** | Searches the wiki and answers with citations | Grounded answers linking to markdown pages |
-| **Lint** | Checks index integrity, links, and wiki health | Auto-fixes plus reported issues |
+| **Ingest** | Collects a source into `RAW/` and compiles it into the wiki | New or updated living pages + ingest record |
+| **Query** | Searches the wiki and answers with citations | Grounded answers; optionally archived to `Wiki/Query/` |
+| **Reflect** | Synthesizes long-term judgments from accumulated pages | Reflection pages in `Wiki/<topic>/reflect/` |
+| **Lint** | Checks index integrity, links, and wiki health | Auto-fixes + lint reports in `Wiki/<topic>/lint/` or `Wiki/Lint/` |
 
 See [SKILL.md](SKILL.md) for the full skill specification.
 
@@ -63,7 +64,7 @@ Give the skill a URL, a file, or pasted text:
 
 > "Ingest this article: https://example.com/attention-is-all-you-need"
 
-The skill stores the source in `raw/`, then compiles or updates the right knowledge pages in `wiki/`.
+The skill stores the source in `RAW/`, then compiles or updates the right knowledge pages in `Wiki/`.
 
 ### 2. Ask your wiki a question
 
@@ -71,11 +72,17 @@ The skill stores the source in `raw/`, then compiles or updates the right knowle
 
 The skill searches the wiki and answers with citations linking back to your markdown pages.
 
-### 3. Keep the wiki healthy
+### 3. Reflect on a topic
+
+> "Write a reflection on the evolution of attention mechanisms"
+
+The skill synthesizes a higher-level analysis from your accumulated living pages into `Wiki/<topic>/reflect/`.
+
+### 4. Keep the wiki healthy
 
 > "Lint my wiki"
 
-Checks for broken links, missing index entries, stale cross-references, and related issues.
+Checks for broken links, missing index entries, stale cross-references, and related issues. Reports are saved to `Wiki/<topic>/lint/` or `Wiki/Lint/`.
 
 ## How the Workflow Works
 
@@ -83,14 +90,21 @@ The core idea from Karpathy: the LLM maintains the wiki while the human focuses 
 
 ```text
 your-project/
-├── raw/            ← Immutable source material
+├── RAW/              ← Immutable source material
 │   └── topic/
 │       └── 2026-04-03-source-article.md
-├── wiki/           ← Compiled knowledge pages maintained by the LLM
+├── Wiki/             ← Compiled knowledge pages maintained by the LLM
+│   ├── purpose.md    ← Goals, key questions, research scope
+│   ├── overview.md   ← Auto-updated global summary
 │   ├── topic/
-│   │   └── concept-name.md
-│   ├── index.md    ← Global table of contents
-│   └── log.md      ← Append-only operation log
+│   │   ├── concept-name.md          ← living page
+│   │   ├── ingest/                  ← ingest records
+│   │   ├── reflect/                 ← reflection pages
+│   │   └── lint/                    ← topic lint reports
+│   ├── Query/        ← Archived query snapshots
+│   ├── Lint/         ← Cross-topic lint reports
+│   ├── index.md      ← Global table of contents
+│   └── log.md        ← Append-only operation log
 ```
 
 Each new source can update multiple pages, strengthen cross-references, and record contradictions. That is what makes the wiki compound over time.
@@ -115,7 +129,11 @@ An LLM wiki is maintained by the model. It updates summaries, cross-links, index
 
 ### What sources can I ingest?
 
-Web pages, papers, blog posts, PDFs, markdown files, text files, and pasted text. The skill converts everything into markdown under `raw/` and compiles it into `wiki/`.
+Web pages, papers, blog posts, PDFs, markdown files, text files, and pasted text. The skill converts everything into markdown under `RAW/` and compiles it into `Wiki/`.
+
+### What is a reflection page?
+
+A reflection page is a higher-level synthesis that captures long-term judgments, evolving perspectives, and cross-cutting analysis across multiple living pages. Unlike living pages that track individual concepts, reflections provide the "so what" layer.
 
 ### Is this production-ready?
 

@@ -71,11 +71,11 @@ Usage strategies, context management, multi-agent orchestration, and human-AI in
 
 ## Related Topics
 
-- [AI Research](../ai-research/_index.md) (Tool comparisons, personal developer practices; includes [Capability-Alignment Paradox](../ai-research/capability-alignment-paradox.md) and [Cyber-Driven Restricted Release](../ai-research/cyber-driven-restricted-release.md) related to Mythos Preview system card)
-- [Agent Deployment](../agent-deployment/_index.md) (Non-technical team deploying AI agents' real blockers, four-ring gap, 9 person/day/expert IT time limit. Complements [OpenClaw Harness Stability](openclaw-harness-stability.md) and [China AI Coding Agent Access](china-ai-coding-agent-access.md): this topic from tool and harness perspective, agent-deployment from actual pushing tools to non-technical employees现场 perspective)
-- [LLM Knowledge Bases](../llm-knowledge-bases/_index.md) (Tool practices in knowledge base workflows)
-- [Open Source and Software Value](../open-source/_index.md) (Code depreciation and open source value migration)
-- [GEO](../geo/_index.md) (GEO extending to agent economy: skill distribution as new distribution mechanism, to AI to People path, directly related to this topic's agent ecosystem and MCP discussions)
+- [[ai-research/_index|AI Research]] (Tool comparisons, personal developer practices; includes [[ai-research/capability-alignment-paradox|Capability-Alignment Paradox]] and [[ai-research/cyber-driven-restricted-release|Cyber-Driven Restricted Release]] related to Mythos Preview system card)
+- [[agent-deployment/_index|Agent Deployment]] (Non-technical team deploying AI agents' real blockers, four-ring gap, 9 person/day/expert IT time limit. Complements [[openclaw-harness-stability|OpenClaw Harness Stability]] and [[china-ai-coding-agent-access|China AI Coding Agent Access]]: this topic from tool and harness perspective, agent-deployment from actual pushing tools to non-technical employees现场 perspective)
+- [[llm-knowledge-bases/_index|LLM Knowledge Bases]] (Tool practices in knowledge base workflows)
+- [[open-source/_index|Open Source and Software Value]] (Code depreciation and open source value migration)
+- [[geo/_index|GEO]] (GEO extending to agent economy: skill distribution as new distribution mechanism, to AI to People path, directly related to this topic's agent ecosystem and MCP discussions)
 
 ## Related Sources
 
@@ -83,4 +83,4 @@ Usage strategies, context management, multi-agent orchestration, and human-AI in
 - [Anthropic Platform Docs](https://platform.claude.com/docs/en/)
 - [Anthropic Research](https://www.anthropic.com/research)
 - [OpenAI Codex App Worktrees](https://developers.openai.com/codex/app/worktrees)
-- [karpathy/autoresearch](https://github.com/karpathy/autoresearch) (Autonomous AI research loop, related analysis见 [Reward Signal Quality and Autonomous Optimization Boundary](../ai-research/reward-signal-automation-boundary.md))
+- [karpathy/autoresearch](https://github.com/karpathy/autoresearch) (Autonomous AI research loop, related analysis见 [[ai-research/reward-signal-automation-boundary|Reward Signal Quality and Autonomous Optimization Boundary]])

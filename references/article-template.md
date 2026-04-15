@@ -1,11 +1,11 @@
 # {Title}
 
 > Sources: {Author1, YYYY-MM-DD; Author2, YYYY-MM-DD}
-> Raw: [{source1}](../../raw/{topic1}/{filename1}.md); [{source2}](../../raw/{topic2}/{filename2}.md)
+> Raw: [[RAW/{topic1}/{filename1}]]; [[RAW/{topic2}/{filename2}]]
 
 ## Overview
 
-{One paragraph summarizing the key points of this article.}
+{One paragraph summarizing the key points of this page.}
 
 ## {Body Sections}
 
@@ -15,6 +15,6 @@
 
 ## See Also
 
-{Cross-references to related wiki articles. Maintained during lint. Use relative links:
-- Same topic: [Other Article](other-article.md)
-- Different topic: [Other Article](../other-topic/other-article.md)}
+{Cross-references to related wiki pages. Use Obsidian wikilinks:
+- [[other-page]]
+- [[other-topic/other-page]]}
