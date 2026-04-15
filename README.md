@@ -101,8 +101,7 @@ your-project/
 │   │   └── lint/                    ← topic lint reports
 │   ├── Query/        ← Archived query snapshots
 │   ├── Lint/         ← Cross-topic lint reports
-│   ├── index.md      ← Global table of contents
-│   └── log.md        ← Append-only operation log
+│   └── index.md      ← Global table of contents
 ```
 
 Each new source can update multiple pages, strengthen cross-references, and record contradictions. That is what makes the wiki compound over time.

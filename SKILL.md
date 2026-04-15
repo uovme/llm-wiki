@@ -29,7 +29,6 @@ See `references/raw-template.md` for the exact format.
 ### Wiki Root
 
 - `Wiki/index.md`：全库目录与主题入口。
-- `Wiki/log.md`：全库按时间记录的操作日志。
 - `Wiki/Query/`：跨主题 query 归档与值得保存的问答快照。
 - `Wiki/Lint/`：跨主题 / 全库级 lint 报告。
 
@@ -55,7 +54,6 @@ Triggers only on the first Ingest. Check whether `RAW/` and `Wiki/` exist. Creat
 - `RAW/` directory (with `.gitkeep`)
 - `Wiki/` directory (with `.gitkeep`)
 - `Wiki/index.md` — heading `# Knowledge Base Index`, empty body
-- `Wiki/log.md` — heading `# Wiki Log`, empty body
 - `Wiki/Query/` directory (with `.gitkeep`)
 - `Wiki/Lint/` directory (with `.gitkeep`)
 
@@ -106,15 +104,6 @@ See `references/article-template.md` for living page format.
 1. 写一条 ingest 记录到 `Wiki/<topic>/ingest/`。See `references/ingest-template.md` for format.
 2. 更新 `Wiki/<topic>/overview.md`：重新生成该主题的摘要，反映主题当前知识状态。See `references/overview-template.md`.
 3. 更新 `Wiki/index.md`（如目录结构或页面集合发生变化）。See `references/index-template.md` for format.
-4. 追加一条日志到 `Wiki/log.md`：
-
-```
-## [YYYY-MM-DD] ingest | <primary page title>
-- Source: <raw file name>
-- Updated: <updated page title>
-```
-
-Omit `- Updated:` lines when no additional pages are updated.
 
 ---
 
@@ -139,10 +128,6 @@ Query 归档是 point-in-time snapshot，不应直接替代 living pages。
 1. Write the answer as a new page in `Wiki/Query/`. See `references/query-template.md`. File name reflects the query topic, e.g., `transformer-architectures-overview.md`.
 2. Always create a new page. Never merge into existing living pages.
 3. Update `Wiki/index.md`. Prefix the Summary with `[Query]`.
-4. Append to `Wiki/log.md`:
-   ```
-   ## [YYYY-MM-DD] query | Archived: <page title>
-   ```
 
 ---
 
@@ -161,10 +146,6 @@ Query 归档是 point-in-time snapshot，不应直接替代 living pages。
 2. reflect 页面需要显式链接回对应 living pages 与关键 RAW。
 3. Use `references/reflect-template.md` for format.
 4. Update `Wiki/index.md`. Prefix the Summary with `[Reflect]`.
-5. Append to `Wiki/log.md`:
-   ```
-   ## [YYYY-MM-DD] reflect | <page title>
-   ```
 
 ---
 
@@ -205,10 +186,6 @@ Quality checks on the wiki. Two categories with different authority levels.
 
 - 主题内 lint：写入 `Wiki/<topic>/lint/`。
 - 全库 / 跨主题 lint：写入 `Wiki/Lint/`。
-- Append to `Wiki/log.md`:
-  ```
-  ## [YYYY-MM-DD] lint | <N> issues found, <M> auto-fixed
-  ```
 
 ---
 
@@ -218,7 +195,7 @@ Quality checks on the wiki. Two categories with different authority levels.
 - 以 Obsidian wikilink 为主：`[[page name]]`。
 - 链接应优先指向实际存在的 `Wiki/...` 路径。
 - living page、reflect、ingest、lint 各自按其目录语义放置，不混放。
-- Today's date for log entries, Collected dates, and Created dates.
+- Today's date for Collected dates and Created dates.
 - Published dates come from the source (use `Unknown` when unavailable).
 
 ## Maintenance Rules
@@ -226,4 +203,3 @@ Quality checks on the wiki. Two categories with different authority levels.
 - 优先增量修改，避免大规模无必要重写。
 - 不覆盖用户已有内容，除非明确知道这是当前结构调整的一部分。
 - 有冲突证据时，显式保留张力与边界条件。
-- `Wiki/log.md` 负责记录发生了什么；具体细节进入相应 ingest / reflect / lint 页面。
