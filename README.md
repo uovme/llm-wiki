@@ -97,7 +97,8 @@ your-project/
 │   ├── topic/
 │   │   ├── purpose.md               ← Topic goals, key questions, scope
 │   │   ├── overview.md              ← Auto-updated topic summary
-│   │   ├── concept-name.md          ← living page
+│   │   ├── contents/                ← living pages
+│   │   │   └── concept-name.md
 │   │   ├── ingest/                  ← ingest records
 │   │   ├── reflect/                 ← reflection pages
 │   │   └── lint/                    ← topic lint reports

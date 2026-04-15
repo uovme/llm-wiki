@@ -6,7 +6,7 @@
 
 | Page | Summary | Updated |
 |------|---------|---------|
-| [[{topic-name}/{page}]] | {One-line summary} | {YYYY-MM-DD} |
+| [[{topic-name}/contents/{page}]] | {One-line summary} | {YYYY-MM-DD} |
 | [[{topic-name}/reflect/{page}]] | [Reflect] {One-line summary} | {YYYY-MM-DD} |
 
 ## {another-topic}
@@ -15,7 +15,7 @@
 
 | Page | Summary | Updated |
 |------|---------|---------|
-| [[{another-topic}/{page}]] | {One-line summary} | {YYYY-MM-DD} |
+| [[{another-topic}/contents/{page}]] | {One-line summary} | {YYYY-MM-DD} |
 
 ## Query
 

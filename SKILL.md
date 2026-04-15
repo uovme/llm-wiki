@@ -40,7 +40,7 @@ See `references/raw-template.md` for the exact format.
 
 1. **purpose**：`Wiki/<topic>/purpose.md`。主题的灵魂。定义目标、关键问题、研究范围与演进论点。Agent 在每次 ingest 和 query 时读取，确保产出方向一致。See `references/purpose-template.md`.
 2. **overview**：`Wiki/<topic>/overview.md`。主题级自动更新的摘要。每次 ingest 后刷新，提供该主题当前知识状态的叙述性概览。See `references/overview-template.md`.
-3. **living pages**：直接放在 `Wiki/<topic>/` 根下。主题的核心知识页面，持续更新。
+3. **living pages**：放在 `Wiki/<topic>/contents/`。主题的核心知识页面，持续更新。
 4. **ingest records**：放在 `Wiki/<topic>/ingest/`。每次 ingest 操作的记录。
 5. **reflection pages**：放在 `Wiki/<topic>/reflect/`。长期判断与综合分析。
 6. **topic lint reports**：放在 `Wiki/<topic>/lint/`。主题内质量检查报告。
@@ -89,10 +89,10 @@ If Query, Reflect, or Lint cannot find the wiki structure, tell the user: "Run a
 
 #### Compile (Wiki/)
 
-先读取 `Wiki/<topic>/purpose.md` 以理解该主题的方向与关注点，再更新 `Wiki/<topic>/` 下的 living pages：
+先读取 `Wiki/<topic>/purpose.md` 以理解该主题的方向与关注点，再更新 `Wiki/<topic>/contents/` 下的 living pages：
 
 - **Same core thesis as existing page** → Merge into that page. Add the new source to Sources/Raw. Update affected sections.
-- **New concept** → Create a new living page in the most relevant topic directory. Name the file after the concept, not the raw file.
+- **New concept** → Create a new living page in `Wiki/<topic>/contents/`. Name the file after the concept, not the raw file.
 - **Spans multiple topics** → Place in the most relevant directory. Add See Also cross-references to related pages elsewhere.
 
 These are not mutually exclusive. A single source may warrant merging into one page while also creating a separate page for a distinct concept it introduces. In all cases, check for factual conflicts: if the new source contradicts existing content, annotate the disagreement with source attribution.
@@ -194,7 +194,7 @@ Quality checks on the wiki. Two categories with different authority levels.
 - 保持 vault 实际大小写：本库使用 `Wiki/`，不是 `wiki/`；使用 `RAW/`，不是 `raw/`。
 - 以 Obsidian wikilink 为主：`[[page name]]`。
 - 链接应优先指向实际存在的 `Wiki/...` 路径。
-- living page、reflect、ingest、lint 各自按其目录语义放置，不混放。
+- living page（contents/）、reflect、ingest、lint 各自按其目录语义放置，不混放。
 - Today's date for Collected dates and Created dates.
 - Published dates come from the source (use `Unknown` when unavailable).
 
