@@ -37,12 +37,14 @@ See `references/raw-template.md` for the exact format.
 
 每个主题位于 `Wiki/<topic>/`，例如 `Wiki/GH3539/`。
 
-其中分为四类内容：
+其中分为六类内容：
 
-1. **living pages**：直接放在 `Wiki/<topic>/` 根下。主题的核心知识页面，持续更新。
-2. **ingest records**：放在 `Wiki/<topic>/ingest/`。每次 ingest 操作的记录。
-3. **reflection pages**：放在 `Wiki/<topic>/reflect/`。长期判断与综合分析。
-4. **topic lint reports**：放在 `Wiki/<topic>/lint/`。主题内质量检查报告。
+1. **purpose**：`Wiki/<topic>/purpose.md`。主题的灵魂。定义目标、关键问题、研究范围与演进论点。Agent 在每次 ingest 和 query 时读取，确保产出方向一致。See `references/purpose-template.md`.
+2. **overview**：`Wiki/<topic>/overview.md`。主题级自动更新的摘要。每次 ingest 后刷新，提供该主题当前知识状态的叙述性概览。See `references/overview-template.md`.
+3. **living pages**：直接放在 `Wiki/<topic>/` 根下。主题的核心知识页面，持续更新。
+4. **ingest records**：放在 `Wiki/<topic>/ingest/`。每次 ingest 操作的记录。
+5. **reflection pages**：放在 `Wiki/<topic>/reflect/`。长期判断与综合分析。
+6. **topic lint reports**：放在 `Wiki/<topic>/lint/`。主题内质量检查报告。
 
 Templates live in `references/` relative to this file. Read them when you need the exact format.
 
@@ -57,7 +59,10 @@ Triggers only on the first Ingest. Check whether `RAW/` and `Wiki/` exist. Creat
 - `Wiki/Query/` directory (with `.gitkeep`)
 - `Wiki/Lint/` directory (with `.gitkeep`)
 
+When creating a new topic directory `Wiki/<topic>/`, also create:
 
+- `Wiki/<topic>/purpose.md` — See `references/purpose-template.md`. Ask the user to fill in goals and scope, or generate a draft based on the first source.
+- `Wiki/<topic>/overview.md` — heading `# <Topic> Overview`, one-line placeholder
 
 If Query, Reflect, or Lint cannot find the wiki structure, tell the user: "Run an ingest first to initialize the wiki." Do not auto-create.
 
@@ -86,7 +91,7 @@ If Query, Reflect, or Lint cannot find the wiki structure, tell the user: "Run a
 
 #### Compile (Wiki/)
 
-更新 `Wiki/<topic>/` 下的 living pages：
+先读取 `Wiki/<topic>/purpose.md` 以理解该主题的方向与关注点，再更新 `Wiki/<topic>/` 下的 living pages：
 
 - **Same core thesis as existing page** → Merge into that page. Add the new source to Sources/Raw. Update affected sections.
 - **New concept** → Create a new living page in the most relevant topic directory. Name the file after the concept, not the raw file.
@@ -99,8 +104,9 @@ See `references/article-template.md` for living page format.
 #### Post-Ingest
 
 1. 写一条 ingest 记录到 `Wiki/<topic>/ingest/`。See `references/ingest-template.md` for format.
-2. 更新 `Wiki/index.md`（如目录结构或页面集合发生变化）。See `references/index-template.md` for format.
-3. 追加一条日志到 `Wiki/log.md`：
+2. 更新 `Wiki/<topic>/overview.md`：重新生成该主题的摘要，反映主题当前知识状态。See `references/overview-template.md`.
+3. 更新 `Wiki/index.md`（如目录结构或页面集合发生变化）。See `references/index-template.md` for format.
+4. 追加一条日志到 `Wiki/log.md`：
 
 ```
 ## [YYYY-MM-DD] ingest | <primary page title>
@@ -119,9 +125,10 @@ Omit `- Updated:` lines when no additional pages are updated.
 #### Steps
 
 1. Read `Wiki/index.md` to locate relevant pages.
-2. Read those pages and synthesize an answer.
-3. Prefer wiki content over your own training knowledge. Cite sources with Obsidian wikilinks: `[[page name]]`.
-4. Output the answer in the conversation. Do not write files unless asked.
+2. Read `Wiki/<topic>/purpose.md` for each relevant topic to understand its goals and scope.
+3. Read those pages and synthesize an answer.
+4. Prefer wiki content over your own training knowledge. Cite sources with Obsidian wikilinks: `[[page name]]`.
+5. Output the answer in the conversation. Do not write files unless asked.
 
 #### Archiving
 
